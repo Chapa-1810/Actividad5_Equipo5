@@ -7,6 +7,7 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
+marcador=0;
 
 def square(x, y):
     "Draw white square with black outline at (x, y)."
@@ -32,7 +33,9 @@ def tap(x, y):
     "Update mark and hidden tiles based on tap."
     spot = index(x, y)
     mark = state['mark']
-
+    global marcador
+    marcador=marcador+1
+    print("Numero de taps: ", marcador)
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
     else:
