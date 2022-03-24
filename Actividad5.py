@@ -1,7 +1,8 @@
 from random import *
 from turtle import *
 from freegames import path
-
+  
+cuaDestapadas=0
 car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
@@ -22,7 +23,7 @@ def square(x, y):
 def index(x, y):
     "Convert (x, y) coordinates to tiles index."
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
-
+   
 def xy(count):
     "Convert tiles count to (x, y) coordinates."
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
@@ -38,6 +39,10 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+        global cuaDestapadas
+        cuaDestapadas=cuaDestapadas+2
+        print("Cuadros destapados: ", cuaDestapadas)
+
 
 def draw():
     "Draw image and tiles."
