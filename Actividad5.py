@@ -1,13 +1,15 @@
 from random import *
 from turtle import *
 from freegames import path
-  
-cuaDestapadas=0
+
 car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
+
+#Variables contadoras
 marcador=0
+cuaDestapadas=0
 
 def square(x, y):
     "Draw white square with black outline at (x, y)."
@@ -33,6 +35,8 @@ def tap(x, y):
     "Update mark and hidden tiles based on tap."
     spot = index(x, y)
     mark = state['mark']
+    
+    #Modificar variable global al momento de que un 'tap' es detectado
     global marcador
     marcador=marcador+1
     print("Numero de taps: ", marcador)
@@ -42,6 +46,8 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+        #Cada que se entra a este condicional se encontro un par, por lo tanto
+        # se modifica la variable global de cuadros destapados
         global cuaDestapadas
         cuaDestapadas=cuaDestapadas+2
         print("Cuadros destapados: ", cuaDestapadas)
@@ -65,6 +71,7 @@ def draw():
         x, y = xy(mark)
         up()
 
+        #Espaciador dependiendo de cantidad de digitos del numero
         if tiles[mark]/10 < 1:
             goto(x+ 15, y)
         else:
