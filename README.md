@@ -1,2 +1,4 @@
 # Actividad5_Equipo5
  Alexis Chapa, Leonardo Garcia, Rodolfo Alejandro, Eugenio Lozano
+
+En la actividad 5. “Juego de Memoria” se presenta un código que al correr, se genera un juego de memoria clásico. La manera en que el código funciona es a través de diversas funciones específicas ya sea para revelar el número que se eligió, identificar un tap en la cuadrícula, revelar la imagen de fondo si se encuentran un par de números, la imagen a revelar, entre otros. A través de GitHub y colaboración del equipo, se realizarán cambios al código de tal manera que despliegue un conteo de la cantidad de taps que el usuario use, notificar cuando todos los cuadros hayan sido destapados y por último, centrar los dígitos dentro de cada cuadro que pertenece a la cuadrícula final. Con esto se demostrará las diferentes habilidades de uso de GitHub y programación.
